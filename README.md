@@ -1,4 +1,4 @@
-# multiple-domains
+# Multiple domains with Nuxt.js
 
 ## What to expect
 
