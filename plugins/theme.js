@@ -5,8 +5,9 @@ export default function ({ app, store, _ }) {
     const theme = store.state.theme
     return app.localePath(path === '/' ? `/` : `${theme}-${path}`)
   }
-  Vue.prototype.themeLayout = (path) => {
+  Vue.prototype.themeAsset = (path, locale) => {
     const theme = store.state.theme
-    return `${theme}-${path}`
+    const themeLocale = app.i18n.locale
+    return locale ? `/${theme}/${themeLocale}/${path}` : `/${theme}/${path}`
   }
 }

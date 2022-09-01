@@ -1,11 +1,28 @@
 # multiple-domains
 
-## What to expect
+## How it works
 
-`server-middleware/theme.js`
-`router.js`
-`plugins/theme.js`
-`store/index.js`
+### 1. We load the theme config here:
+
+see: `server-middleware/theme.js`
+
+The downside - Server responce time is lowered, because we need to make an api call before rendering anything
+
+### 2. We generate the router:
+
+see: `router.js`
+
+### 3. We make some custom directives for the theme
+
+see: `plugins/theme.js`
+
+### 4. We store the theme
+
+see: `store/index.js`
+
+### 5. We async load the content into i18n
+
+see: `locales` and `nuxt.config.js` - i18n part
 
 ## Build Setup
 

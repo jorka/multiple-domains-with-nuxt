@@ -73,7 +73,7 @@ export default {
     ],
 
     langDir: 'locales/',
-    lazy: false,
+    lazy: true,
     vueI18n: {
       fallbackLocale: 'fr',
     },
@@ -81,8 +81,8 @@ export default {
     parsePages: false, // Disable babel parsing
     pages: {
       'theme1/another': {
-        fr: '/theme1/about-us',
-        it: '/theme1/a-propos',
+        fr: '/theme1/another-fr-custom',
+        it: '/theme1/another-it-custom',
       },
     },
   },
