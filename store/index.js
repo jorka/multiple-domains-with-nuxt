@@ -1,16 +1,20 @@
 export const state = () => ({
-  theme: null,
+  routerBase: null,
+  availableLocales: null,
 })
 
 export const mutations = {
-  setConfig(state, theme) {
-    state.theme = theme
+  setConfig(state, routerBase) {
+    state.routerBase = routerBase
+  },
+  setAvailableLocales(state, availableLocales) {
+    state.availableLocales = availableLocales
   },
 }
 
 export const actions = {
-  nuxtServerInit({ commit }, { req }) {
-    // this is already in the req - see server-middleware
-    commit('setConfig', req.theme)
+  nuxtServerInit({ commit }, { $config }) {
+    commit('setConfig', $config._app.router.routerBase)
+    commit('setAvailableLocales', $config._app.router.locales)
   },
 }

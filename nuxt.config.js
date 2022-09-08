@@ -17,7 +17,7 @@ export default {
         { name: 'format-detection', content: 'telephone=no' },
         ...i18nHead.meta,
       ],
-      link: [{ rel: 'icon', href: '/favicon.svg' }, ...i18nHead.link],
+      link: [{ rel: 'icon', href: '/favicon.ico' }, ...i18nHead.link],
     }
   },
 
@@ -25,7 +25,7 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['@/plugins/theme'],
+  plugins: ['@/plugins/i18n-directives'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -44,8 +44,12 @@ export default {
     '@nuxtjs/i18n',
   ],
 
+  serverMiddleware: ['~/server-middleware/router'],
+
   routerModule: {
     keepDefaultRouter: true,
+    fileName: 'index.js',
+    path: './router',
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -55,8 +59,8 @@ export default {
   },
 
   i18n: {
-    strategy: 'prefix_except_default',
-    defaultLocale: 'fr',
+    strategy: 'prefix',
+    detectBrowserLanguage: false,
     locales: [
       {
         code: 'it',
@@ -70,25 +74,39 @@ export default {
         name: 'Français',
         file: 'fr.js',
       },
+      {
+        code: 'en',
+        iso: 'en-EN',
+        name: 'English',
+        file: 'en.js',
+      },
     ],
-
+    defaultLocale: null,
     langDir: 'locales/',
     lazy: true,
-    vueI18n: {
-      fallbackLocale: 'fr',
-    },
 
     parsePages: false, // Disable babel parsing
     pages: {
-      'theme1/another': {
-        fr: '/theme1/another-fr-custom',
-        it: '/theme1/another-it-custom',
+      'site/faq': {
+        fr: '/site/faq-fr',
+        it: '/site/faq-it',
+        en: '/site/faq-en',
       },
     },
   },
 
+  // chakra: {
+  //   extendTheme: {
+  //     colors: {
+  //       brand: { /* ... */ }
+  //     }
+  //   }
+  // },
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 
-  serverMiddleware: ['~/server-middleware/theme'],
+  server: {
+    host: '0.0.0.0',
+  },
 }

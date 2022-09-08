@@ -1,14 +1,14 @@
 <template>
   <div>
-    <h2>I'm a child</h2>
+    <h1>Video Testimonials Page</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'InsideFolderChild',
+  name: 'VideoTestimonialsPage',
   layout({ store }) {
-    return `${store.state.theme}-default`
+    return `${store.state.routerBase}-default`
   },
 }
 </script>

@@ -1,5 +1,5 @@
 export default () => {
   return {
-    siteTitle: 'siteTitle IT',
+    siteTitle: 'siteTitle EN',
   }
 }
