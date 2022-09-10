@@ -7,6 +7,8 @@
     "build": "nuxt build --modern=server",
     "start": "nuxt start --modern=server",
     "generate": "nuxt generate",
+    "analyze": "nuxt build --analyze",
+    "measure": "export NUXT_MEASURE=true; nuxt dev",
     "lint:js": "eslint --ext \".js,.ts,.vue\" --ignore-path .gitignore .",
     "lint:prettier": "prettier --check .",
     "lint": "yarn lint:js && yarn lint:prettier",
@@ -41,6 +43,7 @@
     "eslint-plugin-vue": "^8.2.0",
     "husky": "^7.0.4",
     "lint-staged": "^12.1.2",
+    "nuxt-webpack-optimisations": "^2.2.5",
     "prettier": "^2.5.1"
   }
 }

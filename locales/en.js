@@ -1,5 +1,11 @@
 export default () => {
   return {
-    siteTitle: 'siteTitle EN',
+    site: {
+      page: {
+        home: {
+          title: 'Home EN',
+        },
+      },
+    },
   }
 }

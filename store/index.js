@@ -14,7 +14,8 @@ export const mutations = {
 
 export const actions = {
   nuxtServerInit({ commit }, { $config }) {
-    commit('setConfig', $config._app.router.routerBase)
-    commit('setAvailableLocales', $config._app.router.locales)
+    const { locales, routerBase } = $config._app.router
+    commit('setConfig', routerBase)
+    commit('setAvailableLocales', locales)
   },
 }

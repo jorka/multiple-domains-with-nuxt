@@ -16,6 +16,8 @@ export function createRouter(
     config._app.router = req.router
   }
 
+  // console.log(config._app.router)
+
   const options =
     routerOptions || createDefaultRouter(ssrContext, config).options
 

@@ -13,6 +13,9 @@ export default {
     availableLocales() {
       return this.$store.state.availableLocales
     },
+    activeLocale() {
+      return this.$i18n.locale
+    },
   },
 }
 </script>

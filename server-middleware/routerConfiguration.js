@@ -28,13 +28,13 @@ export const routerConfiguration = {
     {
       host: 'brulafine.local.it',
       routerBase: 'site',
-      locales: ['it'],
+      locales: ['fr', 'it', 'en'],
       defaultLocale: 'it',
     },
     {
       host: 'brulafine.local.fr',
       routerBase: 'site',
-      locales: ['fr', 'en'],
+      locales: ['fr', 'it', 'en'],
       defaultLocale: 'fr',
     },
   ],

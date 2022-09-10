@@ -31,7 +31,7 @@ export default function (req, _, next) {
   req.router = hostConfig
 
   consola.ready({
-    message: `Router base: ${hostConfig.host}, Default Locale: ${hostConfig.defaultLocale}, Locales: ${hostConfig.locales}`,
+    message: `${hostConfig.host}: default locale - ${hostConfig.defaultLocale}, available locales - ${hostConfig.locales}`,
     badge: true,
   })
 

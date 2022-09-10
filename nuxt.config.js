@@ -35,6 +35,7 @@ export default {
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
     '@nuxtjs/router',
+    'nuxt-webpack-optimisations',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -84,8 +85,9 @@ export default {
     defaultLocale: null,
     langDir: 'locales/',
     lazy: true,
-
     parsePages: false, // Disable babel parsing
+
+    // here we rename the routes
     pages: {
       'site/faq': {
         fr: '/site/faq-fr',
@@ -95,13 +97,19 @@ export default {
     },
   },
 
-  // chakra: {
-  //   extendTheme: {
-  //     colors: {
-  //       brand: { /* ... */ }
-  //     }
-  //   }
-  // },
+  webpackOptimisations: {
+    features: {
+      postcssNoPolyfills: true,
+      esbuildLoader: true,
+      esbuildMinifier: true,
+      imageFileLoader: true,
+      webpackOptimisations: true,
+      cacheLoader: true,
+      hardSourcePlugin: false,
+      parallelPlugin: process.env.NODE_ENV === 'development',
+      debug: process.env.NODE_ENV === 'development',
+    },
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
